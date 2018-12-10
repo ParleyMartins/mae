@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Massage;
+use Illuminate\Http\Response;
 
 class MassageController extends Controller
 {
@@ -12,12 +13,12 @@ class MassageController extends Controller
         return Massage::paginate();
     }
 
-    public function store($request)
+    public function store(Request $request)
     {
-        return Masssage::create($request->all);
+        return Massage::create($request->all());
     }
 
-    public function update($request, Massage $massage)
+    public function update(Request $request, Massage $massage)
     {
         $massage->fill($request->all());
         $massage->save();
@@ -25,8 +26,9 @@ class MassageController extends Controller
         return $massage->fresh();
     }
 
-    public function delete($request, Massage $massage)
+    public function destroy(Request $request, Massage $massage)
     {
         $massage->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

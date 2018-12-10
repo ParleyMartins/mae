@@ -20,8 +20,8 @@ class CreateMassagePackageTable extends Migration
             $table->unsignedInteger('amount')->default(1);
             $table->unsignedInteger('duration')->nullable();
 
-            $table->foreign('massage_id')->references('id')->on('massages');
-            $table->foreign('package_id')->references('id')->on('packages');
+            $table->foreign('massage_id')->references('id')->on('massages')->onDelete('cascade');
+            $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
             $table->timestamps();
         });
     }
