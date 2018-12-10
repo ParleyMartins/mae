@@ -1,4 +1,10 @@
 <?php
 
-Route::apiResource('massage', 'MassageController', name);
-Route::apiResource('package', 'PackageController', name);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::apiResource('massage', 'MassageController');
+    Route::apiResource('package', 'PackageController');
+});
