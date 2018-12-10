@@ -15,8 +15,8 @@ class CreateMassagesTable extends Migration
     {
         Schema::create('massages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description');
+            $table->string('name')->unique();
+            $table->text('description')->nullable();
             $table->integer('price');
             $table->unsignedInteger('duration')->default(60);
             $table->timestamps();
