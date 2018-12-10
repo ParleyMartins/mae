@@ -12,6 +12,13 @@ class Package extends Model
 
     public function items()
     {
-        $this->belongsToMany(Massage::class);
+        return $this->belongsToMany(Massage::class);
+    }
+
+    public function getTotalAttribute()
+    {
+        return $this->items->reduce(function ($carry, $item) {
+            return $carry + $item->price;
+        }, 0);
     }
 }
