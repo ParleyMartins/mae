@@ -12,9 +12,4 @@ class Massage extends Model
         'price',
         'duration',
     ];
-
-    public function packages()
-    {
-        $this->belongsToMany(Package::class);
-    }
 }

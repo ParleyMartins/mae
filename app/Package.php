@@ -12,7 +12,7 @@ class Package extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Massage::class);
+        return $this->hasMany(PackageItem::class);
     }
 
     public function getTotalAttribute()

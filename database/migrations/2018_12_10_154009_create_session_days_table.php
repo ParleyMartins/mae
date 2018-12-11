@@ -16,11 +16,12 @@ class CreateSessionDaysTable extends Migration
         Schema::create('session_days', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('massage_session_id');
-            $table->unsignedInteger('massage_id');
-            $table->datetime('day');
+            $table->string('status');
+
+            $table->date('day');
+            $table->time('start_time');
 
             $table->foreign('massage_session_id')->references('id')->on('massage_sessions')->onDelete('cascade');
-            $table->foreign('massage_id')->references('id')->on('massages')->onDelete('cascade');
 
             $table->timestamps();
         });

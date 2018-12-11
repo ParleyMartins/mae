@@ -27,4 +27,14 @@ class MassageSession extends Model
     {
         $this->hasMany(SessionDay::class);
     }
+
+    public function session()
+    {
+        return $this->morphTo();
+    }
+
+    public function isPackage()
+    {
+        return $this->session_type == 'App\Package';
+    }
 }

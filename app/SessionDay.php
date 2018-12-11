@@ -9,7 +9,9 @@ class SessionDay extends Model
     protected $fillable = [
         'massage_session_id',
         'massage_id',
+        'massage_type',
         'day',
+        'start_time',
     ];
 
     protected $dates = [
@@ -19,10 +21,5 @@ class SessionDay extends Model
     public function session()
     {
         return $this->belongsTo(MassageSession::class);
-    }
-
-    public function massage()
-    {
-        return $this->belongsTo(Massage::class);
     }
 }
