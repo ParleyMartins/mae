@@ -25,8 +25,6 @@ class MassageTest extends TestCase
 
         $res->assertStatus(201);
         $this->assertDatabaseHas('massages', $data);
-        $this->assertDatabaseHas('packages', ['name' => $data['name']]);
-        $this->assertDatabaseHas('massage_package', $packageData);
     }
 
     public function test_update_massage()
@@ -45,9 +43,6 @@ class MassageTest extends TestCase
         $res->assertStatus(200);
         $this->assertDatabaseHas('massages', $newData);
         $this->assertDatabaseMissing('massages', $oldData);
-        $this->assertDatabaseHas('packages', ['name' => $newData['name']]);
-        $this->assertDatabaseMissing('massages', ['name' => $oldData['name']]);
-        $this->assertDatabaseHas('massage_package', $packageData);
     }
 
     public function test_delete_massage()
@@ -64,7 +59,5 @@ class MassageTest extends TestCase
 
         $res->assertStatus(204);
         $this->assertDatabaseMissing('massages', $data);
-        $this->assertDatabaseMissing('packages', ['name' => $massage->name]);
-        $this->assertDatabaseMissing('massage_package', $packageData);
     }
 }
