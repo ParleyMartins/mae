@@ -18,7 +18,7 @@ class Package extends Model
     public function getTotalAttribute()
     {
         return $this->items->reduce(function ($carry, $item) {
-            return $carry + $item->price;
+            return $carry + ($item->price * $item->amount);
         }, 0);
     }
 }
