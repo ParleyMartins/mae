@@ -10,7 +10,8 @@ class MassageController extends Controller
 {
     public function index()
     {
-        return Massage::paginate();
+        $massages = Massage::all();
+        return view('massages', ['massages' => json_encode($massages)]);
     }
 
     public function store(Request $request)

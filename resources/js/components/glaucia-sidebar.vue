@@ -21,13 +21,13 @@ export default {
     return {
       menu: [
         { title: "Agenda", icon: "far fa-calendar-alt", href: "/calendar" },
-        { title: "Tipos de Massagem", icon: "fas fa-hands", href: "/calendar" },
+        { title: "Tipos de Massagem", icon: "fas fa-hands", href: "/massage" },
         {
           title: "Pacotes",
           icon: "fas fa-hand-holding-usd",
-          href: "/calendar"
+          href: "/packages"
         },
-        { title: "Clientes", icon: "fas fa-users", href: "/calendar" }
+        { title: "Clientes", icon: "fas fa-users", href: "/clients" }
       ]
     };
   },

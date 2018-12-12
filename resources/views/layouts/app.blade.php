@@ -14,7 +14,6 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,7 +23,7 @@
     <div id="app">
         <div class="d-flex">
             <glaucia-sidebar></glaucia-sidebar>
-            <main class="py-4 w-100">
+            <main class="py-3 pl-1 w-100">
                 @yield('content')
             </main>
         </div>

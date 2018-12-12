@@ -20,12 +20,15 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
 Vue.component('glaucia-sidebar', require('./components/glaucia-sidebar.vue'));
+Vue.component('massage-list', require('./components/massage-list.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.filter('monetize', value => {});
 
 const app = new Vue({
     el: '#app',
