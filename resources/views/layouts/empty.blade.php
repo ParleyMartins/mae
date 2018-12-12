@@ -22,6 +22,9 @@
 </head>
 <body>
     <div id="app">
+        <div class="text-center mt-2">
+            <img src="{{ asset('logo-transparent.png') }}" alt="Logo Glaucia Massoterapia" width="400px">
+        </div>
         <main class="py-4 w-100">
             @yield('content')
         </main>
