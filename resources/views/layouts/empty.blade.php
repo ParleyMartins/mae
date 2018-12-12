@@ -22,13 +22,9 @@
 </head>
 <body>
     <div id="app">
-        <div class="d-flex">
-            <glaucia-sidebar></glaucia-sidebar>
-            <main class="py-4 w-100">
-                @yield('content')
-            </main>
-        </div>
-
+        <main class="py-4 w-100">
+            @yield('content')
+        </main>
     </div>
 </body>
 </html>
